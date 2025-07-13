@@ -1,0 +1,82 @@
+
+body{
+    display: flex;
+    justify-content: center;
+
+}
+
+.continer{
+
+   border: 2px solid black;
+   width: 80%;
+   margin: 10px 4px;
+   padding: 10px;
+   
+}
+
+.card-continer{
+    display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.cart{
+    border: 2px solid black;
+    text-align: center;
+    padding: 8px;
+    background-color: rgb(130, 133, 135);
+    color: aliceblue;
+   
+}
+#btn{
+    background-color: green;
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    font-weight: 900;
+}
+#btn:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+h1{
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-weight: 900;
+}
+#BuyNow{
+    background-color: blue;
+    color: aliceblue;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+#total{
+    font-size: 30px;
+}
+#ja{
+    background-color: rgb(6, 103, 103);
+    border: navy;
+    margin: 10px 4px;
+    padding: 10px 7px;
+    border-radius: 5px;
+    color: aliceblue;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(232, 3, 3, 0.22) 0px 15px 12px;
+}
+.cart-item ul{
+    list-style-type: none;
+    padding: 0;
+}
+.cart-item ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#total{
+    font-size: 20px;
+}
+.titleFont{
+    font-size: 20px;
+}
