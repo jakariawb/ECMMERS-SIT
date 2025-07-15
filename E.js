@@ -85,3 +85,37 @@ BuyNow.addEventListener('click',()=>{
     alert('your cart is empty!');
    }
 })
+
+var text = 'Welcome to My website!'
+var textBox = document.getElementById('textBox')
+
+for(let i = 0; i<text.length; i++){
+    setTimeout(() =>{
+        textBox.textContent += text[i]
+    }, i * 100)
+}
+
+var text1 = 'Welcome to My website!'
+var textBox1 = document.getElementById('textBox1')
+
+let index = 0;
+let isDlite = false;
+
+function typeEffict (){
+    if(!isDlite && index <= text1.length){
+        textBox1.textContent = text1.substring(0, index);
+        index ++
+    }
+    else if(isDlite && index >= 0){
+        textBox1.textContent = text1.substring(0 , index)
+        index--
+    }
+    if(index>text1.length){
+        isDlite  = true;
+    }
+    if(index< 0){
+        isDlite = false;
+    }
+    setTimeout(typeEffict, 100)
+}
+typeEffict()

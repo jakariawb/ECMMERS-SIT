@@ -1,6 +1,6 @@
 
 body{
-    display: flex;
+   
     justify-content: center;
 
 }
@@ -79,4 +79,11 @@ h1{
 }
 .titleFont{
     font-size: 20px;
+}
+
+#textBox{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 900;
 }
