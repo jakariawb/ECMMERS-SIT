@@ -95,7 +95,7 @@ for(let i = 0; i<text.length; i++){
     }, i * 100)
 }
 
-var text1 = 'Welcome to My website!'
+var text1 = 'Welcome to My website!';
 var textBox1 = document.getElementById('textBox1')
 
 let index = 0;
@@ -108,14 +108,83 @@ function typeEffict (){
     }
     else if(isDlite && index >= 0){
         textBox1.textContent = text1.substring(0 , index)
-        index--
+        index--;
     }
-    if(index>text1.length){
+    if(index > text1.length){
         isDlite  = true;
     }
-    if(index< 0){
+    if(index < 0){
         isDlite = false;
     }
     setTimeout(typeEffict, 100)
 }
 typeEffict()
+
+
+var textInput = document.getElementById('textInput');
+var button = document.getElementById('button');
+var qrbox = document.getElementById('qrbox')
+
+function QR (value){
+if (value.trim() !== "") {
+       qrbox.src = `
+       https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(value)}`;
+   }
+   else{
+    alert('Please enter texr or URL to generate a QR Code')
+   }
+}
+
+button.addEventListener('click',()=>{
+  var v = textInput.value;
+  QR(v)
+  
+})
+
+// learn pagination
+
+var productlist = document.getElementById('product-list');
+var pagination = document.getElementById('pagination');
+var perPageProducts = 6;
+let allproducts = []
+
+var lodeProduct = async () =>{
+    var rest = await fetch('https://fakestoreapi.com/products')
+    var data = await rest.json()
+    allproducts = data;
+     showPage(1);
+     setupPagination();
+}
+var showPage = (pageNumber) =>{
+     productlist.innerHTML = '';
+    var start = (pageNumber -1) * perPageProducts;
+    var end = start +  perPageProducts;
+    var pageItems = allproducts.slice(start, end);
+    pageItems.forEach(product =>{
+        var div = document.createElement('div');
+        Object.assign(div.style,{
+            border:'2px solid black'
+        })
+        div.innerHTML = `
+             
+                <h3>${product.title}</h3>
+                <img src="${product.image}" alt="${product.title}" style="width: 100px;">
+                <p>Price: $${product.price}</p>
+                <p>${product.description}</p>
+            
+        `;
+        productlist.appendChild(div)
+    })
+}
+var setupPagination = () =>{
+     pagination.innerHTML = '';
+   var totalPages = Math.ceil(allproducts.length / perPageProducts);
+
+    for(let i = 0; i <= totalPages; i++){
+        var btn = document.createElement('button');
+        btn.innerText = i;
+        btn.addEventListener('click', () => showPage(i));
+        pagination.appendChild(btn)
+    }
+}
+lodeProduct()

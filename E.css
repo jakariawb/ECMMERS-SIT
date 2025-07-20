@@ -87,3 +87,35 @@ h1{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 900;
 }
+.maine{
+    text-align: center;
+    border: 2px solid black;
+    margin: 10px 30px;
+    padding: 20px;
+}
+#textInput{
+    padding: 5px;
+    width: 80%;
+    margin: 15px;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+#button{
+    background-color: blue;
+    padding: 10px 20px;
+    border: 2px solid white;
+    color: aliceblue;
+    font-weight: 900;
+    
+}
+.maineImg{
+    margin-top: 10px;
+}
+
+#product-list{
+    display: grid;
+    grid-template-columns:repeat(3, 1fr);
+    background-color: aqua;
+    color: rgb(3, 35, 64);
+    gap: 10px;
+}

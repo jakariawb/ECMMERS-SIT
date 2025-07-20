@@ -58,3 +58,14 @@ var changeBGColor = (strength) =>{
   var color = ['#ff4d4d', '#ffa500', '#4682b4', '#32cd32']
   document.body.style.backgroundColor = color [strength-1]|| '#ff4d4d'
 }
+
+
+var GenerateQR = () =>{
+  var inputURL = document.getElementById('inputURL').value;
+  var imgURL = document.getElementById('imgURL');
+ if(inputURL.trim()){
+    imgURL.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${inputURL}`
+ }else{
+  alert('Please enter texr or URL to generate a QR Code')
+ }
+}
